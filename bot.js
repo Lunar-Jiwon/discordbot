@@ -357,9 +357,10 @@ function changenickname(id,member,rank, rankname,msg){
         roblox.getUsernameFromId(id).then(function(name){
             roblox.getRankInGroup(5882833,id).then(function(srt){
                 if(srt != 0){
-                    msg.member.roles.add('712235494704152587')
                     msg.member.roles.add('599742981519704097')
-                    msg.member.roles.remove('599743152068493332')
+                    msg.member.roles.add('712235494704152587')
+                    msg.member.roles.remove('701366424123473921')
+                    msg.member.roles.remove('717715673924763728')
                     giverole(msg,rank)
                     member.setNickname("["+rankname+"] (SRT) "+name);
                     msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다."))
@@ -367,24 +368,29 @@ function changenickname(id,member,rank, rankname,msg){
                     roblox.getRankInGroup(5426538,id).then(function(mp){
                         if(mp != 0){
                             giverole(msg,rank)
-                            msg.member.roles.add('701366424123473921')
                             msg.member.roles.add('599742981519704097')
-                            msg.member.roles.remove('599743152068493332')
+                            msg.member.roles.add('701366424123473921')
+                            msg.member.roles.remove('717715673924763728')
+                            msg.member.roles.remove('712235494704152587') 
                             member.setNickname("["+rankname+"] (MP) "+name);
                             msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다."))
                         }else{
                             roblox.getRankInGroup(5419545,id).then(function(etg){
                                 if(etg != 0){
                                     giverole(msg,rank)
-                                    msg.member.roles.add('717715673924763728')
                                     msg.member.roles.add('599742981519704097')
-                                    msg.member.roles.remove('599743152068493332')
+                                    msg.member.roles.add('717715673924763728')
+                                    msg.member.roles.remove('712235494704152587')
+                                    msg.member.roles.remove('701366424123473921')
                                     member.setNickname("["+rankname+"] (ETG) "+name);
                                     msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다."))
                                 }else{
                                     giverole(msg,rank)
                                     msg.member.roles.add('599742981519704097')
-                                    msg.member.roles.remove('599743152068493332')
+                                    msg.member.roles.remove('599743152068493332') 
+                                    msg.member.roles.remove('712235494704152587')
+                                    msg.member.roles.remove('701366424123473921')
+                                    msg.member.roles.remove('717715673924763728')
                                     member.setNickname("["+rankname+"] "+name);
                                     msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다."))
                                 }
