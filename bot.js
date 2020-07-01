@@ -6,10 +6,10 @@ const { red } = require('color-name');
 const { RSA_PKCS1_OAEP_PADDING } = require('constants');
 const prefix = ";"
 const token = process.env.token;
+const cookie = process.env.cookie;
 const verify = prefix+"인증"
 var ranks = ["훈련병","이등병","일등병","상등병","병장","하사","중사","상사","원사","주임원사","준위","소위","중위","대위","소령","중령","대령","준장","소장","중장"]
 var division = ["ETG","SRT","MP"]
-const cookie = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_BAE2FCFB25F9996753441ADB3D0A8119ED7D28A7C20790E3A102061AC4AE7431178363B1331B9ACB3EC98104E2C5C0297D4D9D0C7C3BBAF0B821B4342688984C78B5B0B04079E55311AE64FC5E98ADD0A1F057DDEF1F342E7D35CDF4E22B9CAB283DA95DE40B6F82B7F50978782306007B2AB67346598251E3D822C73C63FB91F464E917A0E54EB48192606387B8B0588627B3BE9476BB2288179130E51DBB727C50B403BD916FACCCDC7FAB45B2C4EF16091CB08DB5905917BB46C634B6C132CF38F7D6DEB45FAB3843AA7AAEC7A20C1A395AE151BFD20EF9092B18D456915E40A34C745C16F3A74EEF1921A01A1BCABC4E11628CBE2F2768351C6F4492AD985C6B9A93F7815D8DEF90C89CCA731155BD98E8905FC6408A8C9623F237E54573E04569D5"
 var veri = ["kings man mingle","Manners maketh man","i want chicken","yeah rokmc yeah","mingle is rokmc","대한민국 만세","You who hava suffered, find where love hides.","Ths first time i met Brice Losky, I flipped.","The more you gain by pretending","the less you're gonna actually have.","His hair smelled","just like watermelon.","You just need to believe in yourself","The notebook","We are just gonna wait and see."]
 async function login() {
     roblox.setCookie(cookie);
