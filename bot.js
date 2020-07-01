@@ -45,7 +45,7 @@ function check(msg){
                     roblox.getIdFromUsername(args[1]).then(function (id){
                         roblox.getBlurb(id).then(function(blurb){
                             if (blurb == veri[randomvalue]){
-                                roblox.getRankNameInGroup(4889680,id).then(function(rank){
+                                roblox.getRankInGroup(4889680,id).then(function(rank){
                                     if(rank == 1) {
                                         changenickname(id, msg.member,rank,ranks[0],msg);
                                     }else if(rank==2){
