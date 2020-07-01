@@ -232,45 +232,44 @@ function giverole(msg,rank){
     }
     else if(rank==60){
         msg.member.roles.add(headrole[1]);
-        msg.member.roles.add(role[8])
+        msg.member.roles.add(role[9])
     }
     else if(rank==100){
         msg.member.roles.add(headrole[2]);
-        msg.member.roles.add(role[9])
+        msg.member.roles.add(role[10])
     }
     else if(rank==125){
         msg.member.roles.add(headrole[3]);
-        msg.member.roles.add(role[10])
+        msg.member.roles.add(role[11])
     }
     else if(rank==130){
         msg.member.roles.add(headrole[3]);
-        msg.member.roles.add(role[11])
+        msg.member.roles.add(role[12])
     }
     else if(rank==150){
         msg.member.roles.add(headrole[3]);
-        msg.member.roles.add(role[12])
-    }
-    else if(rank==160){
-        msg.member.roles.add(headrole[4]);
         msg.member.roles.add(role[13])
-    }
-    else if(rank==175){
+    }else if(rank==160){
         msg.member.roles.add(headrole[4]);
         msg.member.roles.add(role[14])
     }
+    else if(rank==175){
+        msg.member.roles.add(headrole[4]);
+        msg.member.roles.add(role[15])
+    }
     else if(rank==200){
         msg.member.roles.add(headrole[5]);
-        msg.member.roles.add(role[15])
+        msg.member.roles.add(role[16])
     }else if(rank==220){
         msg.member.roles.add(headrole[6]);
-        msg.member.roles.add(role[16])
+        msg.member.roles.add(role[17])
     }
     else if(rank==230){
         msg.member.roles.add(headrole[6]);
-        msg.member.roles.add(role[17])
+        msg.member.roles.add(role[18])
     }else if(rank ==240){
         msg.member.roles.add(headrole[6]);
-        msg.member.roles.add(role[18])
+        msg.member.roles.add(role[19])
     }
 }
 
