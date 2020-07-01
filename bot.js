@@ -10,13 +10,19 @@ const cookie = process.env.cookie;
 const verify = prefix+"인증"
 var ranks = ["훈련병","이등병","일등병","상등병","병장","하사","중사","상사","원사","주임원사","준위","소위","중위","대위","소령","중령","대령","준장","소장","중장"]
 var division = ["ETG","SRT","MP"]
-var veri = ["kings man mingle","Manners maketh man","i want chicken","yeah rokmc yeah","mingle is rokmc","대한민국 만세","You who hava suffered, find where love hides.","Ths first time i met Brice Losky, I flipped.","The more you gain by pretending","the less you're gonna actually have.","His hair smelled","just like watermelon.","You just need to believe in yourself","The notebook","We are just gonna wait and see."]
+var veri = ["kings man","Manners maketh man","i want chicken","yeah rokmc yeah","mingle is rokmc","대한민국 만세","You who hava suffered, find where love hides.","Ths first time i met Brice Losky, I flipped.","The more you gain by pretending","the less you're gonna actually have.","His hair smelled","just like watermelon.","You just need to believe in yourself","The notebook","We are just gonna wait and see."]
 async function login() {
     roblox.setCookie(cookie);
   }
 login();
 client.on('ready', () =>{
-    client.user.setActivity(';인증 명령어를 통해 인증하세요!', { type: 'WATCHING' });
+    client.user.setPresence({
+        status: "online",  //You can show online, idle....
+        game: {
+            name: ";인증 명령어를 통해 인증을 완료하세요",  //The message shown
+            type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }
+    });
     console.log('봇이 준비되었습니다')
 });
 
