@@ -317,4 +317,4 @@ function changenickname(id,member,rank, rankname,msg){
         })
     }
 }
-client.login('NzI3NDk4NzUyNDUzMjQ3MDQ3.XvsuEQ.7lQPutO31IpfPZEaXsLw5gHmOK4')
+client.login(token)
