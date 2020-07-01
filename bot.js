@@ -16,7 +16,7 @@ async function login() {
   }
 login();
 client.on('ready', () =>{
-    client.user.setActivity(";인증 명령어를 사용해서 인증하세요!");
+    client.user.setActivity(';인증 명령어를 통해 인증하세요!', { type: 'WATCHING' });
     console.log('봇이 준비되었습니다')
 });
 
