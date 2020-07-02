@@ -198,7 +198,7 @@ function check(msg){
     }
 }
 function successend(msg){
-    msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다."))
+    msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
 }
 function giverole(msg,rank){
     var headrole = ['627830448487268371','606750995028115457','682110477073252367','682110029272449178','682110034473386084','599742584792940564']
