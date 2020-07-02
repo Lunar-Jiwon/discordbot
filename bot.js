@@ -204,35 +204,35 @@ function giverole(msg,rank){
 '599741146750779422','624876629826600961','599741145823576077','624876629029814278','599741145723043856','607186064829841449','599741145118933014','599741144213094437',
 '600238919077986307','603082466617720832','690068250364870812']
     function removeallheadrole(msg){
-    msg.member.roles.add(headrole[0]);
-    msg.member.roles.add(headrole[1]);
-    msg.member.roles.add(headrole[2]);
-    msg.member.roles.add(headrole[3]);
-    msg.member.roles.add(headrole[4]);
-    msg.member.roles.add(headrole[5]);
+    msg.member.roles.remove(headrole[0]);
+    msg.member.roles.remove(headrole[1]);
+    msg.member.roles.remove(headrole[2]);
+    msg.member.roles.remove(headrole[3]);
+    msg.member.roles.remove(headrole[4]);
+    msg.member.roles.remove(headrole[5]);
 }
 
 function removeallrole(msg){
-    msg.member.roles.add(role[0]);
-    msg.member.roles.add(role[1]);
-    msg.member.roles.add(role[2]);
-    msg.member.roles.add(role[3]);
-    msg.member.roles.add(role[4]);
-    msg.member.roles.add(role[5]);
-    msg.member.roles.add(role[6]);
-    msg.member.roles.add(role[7]);
-    msg.member.roles.add(role[8]);
-    msg.member.roles.add(role[9]);
-    msg.member.roles.add(role[10]);
-    msg.member.roles.add(role[11]);
-    msg.member.roles.add(role[12]);
-    msg.member.roles.add(role[13]);
-    msg.member.roles.add(role[14]);
-    msg.member.roles.add(role[15]);
-    msg.member.roles.add(role[16]);
-    msg.member.roles.add(role[17]);
-    msg.member.roles.add(role[18]);
-    msg.member.roles.add(role[19]);
+    msg.member.roles.remove(role[0]);
+    msg.member.roles.remove(role[1]);
+    msg.member.roles.remove(role[2]);
+    msg.member.roles.remove(role[3]);
+    msg.member.roles.remove(role[4]);
+    msg.member.roles.remove(role[5]);
+    msg.member.roles.remove(role[6]);
+    msg.member.roles.remove(role[7]);
+    msg.member.roles.remove(role[8]);
+    msg.member.roles.remove(role[9]);
+    msg.member.roles.remove(role[10]);
+    msg.member.roles.remove(role[11]);
+    msg.member.roles.remove(role[12]);
+    msg.member.roles.remove(role[13]);
+    msg.member.roles.remove(role[14]);
+    msg.member.roles.remove(role[15]);
+    msg.member.roles.remove(role[16]);
+    msg.member.roles.remove(role[17]);
+    msg.member.roles.remove(role[18]);
+    msg.member.roles.remove(role[19]);
     
     
 }
