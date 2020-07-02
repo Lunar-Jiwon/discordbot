@@ -197,7 +197,9 @@ function check(msg){
         
     }
 }
-
+function successend(msg){
+    msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다."))
+}
 function giverole(msg,rank){
     var headrole = ['627830448487268371','606750995028115457','682110477073252367','682110029272449178','682110034473386084','599742584792940564']
     var role = ['599741151649726475','695117020584345731','599741150936432640','604682502912868352','599741148445278221','644088819892879360','606127443886997514','599741147555954699',
@@ -241,115 +243,135 @@ function removeallrole(msg){
         removeallheadrole(msg)
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[0])
+        successend(msg)
     }else if(rank==2){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[1])
+        successend(msg)
     }else if(rank==3){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[2])
+        successend(msg)
     }
     else if(rank==4){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[3])
+        successend(msg)
     }
     else if(rank==5){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[4])
+        successend(msg)
     }
     else if(rank==10){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[5])
+        successend(msg)
     }
     else if(rank==20){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[6])
+        successend(msg)
     }
     else if(rank==40){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[7])
+        successend(msg)
     }
     else if(rank==50){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[8])
+        successend(msg)
     }
     else if(rank==60){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[9])
+        successend(msg)
     }
     else if(rank==100){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[2]);
         msg.member.roles.add(role[10])
+        successend(msg)
     }
     else if(rank==125){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[3]);
         msg.member.roles.add(role[11])
+        successend(msg)
     }
     else if(rank==130){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[3]);
         msg.member.roles.add(role[12])
+        successend(msg)
     }
     else if(rank==150){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[3]);
         msg.member.roles.add(role[13])
+        successend(msg)
     }else if(rank==160){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[4]);
         msg.member.roles.add(role[14])
+        successend(msg)
     }
     else if(rank==175){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[4]);
         msg.member.roles.add(role[15])
+        successend(msg)
     }
     else if(rank==200){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[5]);
         msg.member.roles.add(role[16])
+        successend(msg)
     }else if(rank==220){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[6]);
         msg.member.roles.add(role[17])
+        successend(msg)
     }
     else if(rank==230){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[6]);
         msg.member.roles.add(role[18])
+        successend(msg)
     }else if(rank ==240){
         removeallrole(msg)
         removeallheadrole(msg)
         msg.member.roles.add(headrole[6]);
         msg.member.roles.add(role[19])
+        successend(msg)
     }
 }
 
@@ -364,7 +386,7 @@ function changenickname(id,member,rank, rankname,msg){
                     msg.member.roles.remove('717715673924763728')
                     giverole(msg,rank)
                     member.setNickname("["+rankname+"] (SRT) "+name);
-                    msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
+                    
                 }else{
                     roblox.getRankInGroup(5426538,id).then(function(mp){
                         if(mp != 0){
@@ -374,7 +396,7 @@ function changenickname(id,member,rank, rankname,msg){
                             msg.member.roles.remove('717715673924763728')
                             msg.member.roles.remove('712235494704152587') 
                             member.setNickname("["+rankname+"] (MP) "+name);
-                            msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
+                            
                         }else{
                             roblox.getRankInGroup(5419545,id).then(function(etg){
                                 if(etg != 0){
@@ -384,7 +406,7 @@ function changenickname(id,member,rank, rankname,msg){
                                     msg.member.roles.remove('712235494704152587')
                                     msg.member.roles.remove('701366424123473921')
                                     member.setNickname("["+rankname+"] (ETG) "+name);
-                                    msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
+                                    
                                 }else{
                                     giverole(msg,rank)
                                     msg.member.roles.add('599742981519704097')
@@ -393,7 +415,7 @@ function changenickname(id,member,rank, rankname,msg){
                                     msg.member.roles.remove('701366424123473921')
                                     msg.member.roles.remove('717715673924763728')
                                     member.setNickname("["+rankname+"] "+name);
-                                    msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
+                                    
                                 }
                             })
                         }
