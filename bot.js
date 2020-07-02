@@ -210,171 +210,141 @@ function giverole(msg,rank){
     var role = ['599741151649726475','695117020584345731','599741150936432640','599741149644849165','604682502912868352','599741148445278221','644088819892879360','606127443886997514',
 '599741147555954699','599741146750779422','624876629826600961','599741145823576077','624876629029814278','599741145723043856','607186064829841449','599741145118933014',
 '599741144213094437','600238919077986307','600238919077986307','603082466617720832','690068250364870812']
-    function removeallheadrole(msg){
-    msg.member.roles.remove(headrole[0]);
-    msg.member.roles.remove(headrole[1]);
-    msg.member.roles.remove(headrole[2]);
-    msg.member.roles.remove(headrole[3]);
-    msg.member.roles.remove(headrole[4]);
-    msg.member.roles.remove(headrole[5]);
-}
-
 function removeallrole(msg){
-    msg.member.roles.remove(role[0]);
-    msg.member.roles.remove(role[1]);
-    msg.member.roles.remove(role[2]);
-    msg.member.roles.remove(role[3]);
-    msg.member.roles.remove(role[4]);
-    msg.member.roles.remove(role[5]);
-    msg.member.roles.remove(role[6]);
-    msg.member.roles.remove(role[7]);
-    msg.member.roles.remove(role[8]);
-    msg.member.roles.remove(role[9]);
-    msg.member.roles.remove(role[10]);
-    msg.member.roles.remove(role[11]);
-    msg.member.roles.remove(role[12]);
-    msg.member.roles.remove(role[13]);
-    msg.member.roles.remove(role[14]);
-    msg.member.roles.remove(role[15]);
-    msg.member.roles.remove(role[16]);
-    msg.member.roles.remove(role[17]);
-    msg.member.roles.remove(role[18]);
-    msg.member.roles.remove(role[19]);
-    msg.member.roles.remove(role[20]);
+    msg.member.roles.remove(msg.member.roles);
     
     
 }
-    if(rank === 1) {
+    if(rank == 1) {
         removeallrole(msg)
-        removeallheadrole(msg)
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[0])
         successend(msg)
-    }else if(rank===2){
+    }else if(rank==2){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[1])
         successend(msg)
-    }else if(rank===3){
+    }else if(rank==3){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[2])
         successend(msg)
     }
-    else if(rank===4){
+    else if(rank==4){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[0]);
         msg.member.roles.add(role[3])
         successend(msg)
     }
-    else if(rank===5){
+    else if(rank==5){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[4])
         successend(msg)
     }
-    else if(rank===10){
+    else if(rank==10){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[5])
         successend(msg)
     }
-    else if(rank===20){
+    else if(rank==20){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[6])
         successend(msg)
     }
-    else if(rank===40){
+    else if(rank==40){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[7])
         successend(msg)
     }
-    else if(rank===50){
+    else if(rank==50){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[8])
         successend(msg)
     }
-    else if(rank===60){
+    else if(rank==60){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[1]);
         msg.member.roles.add(role[9])
         successend(msg)
     }
-    else if(rank===100){
+    else if(rank==100){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[2]);
         msg.member.roles.add(role[10])
         successend(msg)
     }
-    else if(rank===125){
+    else if(rank==125){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[3]);
         msg.member.roles.add(role[11])
         successend(msg)
     }
-    else if(rank===130){
+    else if(rank==130){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[3]);
         msg.member.roles.add(role[12])
         successend(msg)
     }
-    else if(rank===150){
+    else if(rank==150){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[3]);
         msg.member.roles.add(role[13])
         successend(msg)
-    }else if(rank===160){
+    }else if(rank==160){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[4]);
         msg.member.roles.add(role[14])
         successend(msg)
     }
-    else if(rank===175){
+    else if(rank==175){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[4]);
         msg.member.roles.add(role[15])
         successend(msg)
     }
-    else if(rank===200){
+    else if(rank==200){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[5]);
         msg.member.roles.add(role[16])
         successend(msg)
-    }else if(rank===220){
+    }else if(rank==220){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[6]);
         msg.member.roles.add(role[17])
         successend(msg)
     }
-    else if(rank===230){
+    else if(rank==230){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[6]);
         msg.member.roles.add(role[18])
         successend(msg)
-    }else if(rank ===240){
+    }else if(rank ==240){
         removeallrole(msg)
-        removeallheadrole(msg)
+       
         msg.member.roles.add(headrole[6]);
         msg.member.roles.add(role[19])
         successend(msg)
