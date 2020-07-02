@@ -198,8 +198,8 @@ function check(msg){
         }
         
     }else if(msg.channel.id === '653905030964838420'){
-        msg.react(':thumbsup:')
-        msg.react(':thumbsdown: ')
+        msg.react('728176232352579625')
+        msg.react('723496367481290774')
     }
 }
 function successend(msg){
