@@ -212,10 +212,14 @@ function giverole(msg,rank){
 '599741144213094437','600238919077986307','600238919077986307','603082466617720832','690068250364870812']
 function removeallrole(msg){
     for(var i in headrole){
-        msg.member.roles.remove(headrole[i]);
+        if(msg.member.roles.has(headrole[i])){
+            msg.member.roles.remove(headrole[i])
+        }
     }
     for(var i in role){
-        msg.member.roles.remove(role[i]);
+        if(msg.member.roles.has(role[i])){
+            msg.member.roles.remove(role[i])
+        }
     }
 }
     if(rank == 1) {
