@@ -211,7 +211,7 @@ function giverole(msg,rank){
 '599741147555954699','599741146750779422','624876629826600961','599741145823576077','624876629029814278','599741145723043856','607186064829841449','599741145118933014',
 '599741144213094437','600238919077986307','600238919077986307','603082466617720832','690068250364870812']
 function removeallrole(msg){
-    let rMember = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let rMember = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
    rMember.removeRoles(rMember.roles).then(console.log).catch(console.error);
     
     
