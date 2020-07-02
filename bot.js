@@ -7,6 +7,7 @@ const { RSA_PKCS1_OAEP_PADDING } = require('constants');
 const prefix = ";"
 const token = process.env.token;
 const cookie = process.env.cookie;
+let rMember = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 const verify = prefix+"인증"
 var ranks = ["훈련병","이등병","일등병","상등병","병장","하사","중사","상사","원사","주임원사","준위","소위","중위","대위","소령","중령","대령","준장","소장","중장"]
 var division = ["ETG","SRT","MP"]
@@ -211,7 +212,7 @@ function giverole(msg,rank){
 '599741147555954699','599741146750779422','624876629826600961','599741145823576077','624876629029814278','599741145723043856','607186064829841449','599741145118933014',
 '599741144213094437','600238919077986307','600238919077986307','603082466617720832','690068250364870812']
 function removeallrole(msg){
-    msg.member.roles.remove(msg.member.roles);
+   rMember.removeRoles(rMember.roles).then(console.log).catch(console.error);
     
     
 }
