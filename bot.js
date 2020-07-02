@@ -198,8 +198,8 @@ function check(msg){
         }
         
     }else if(msg.channel.id === '653905030964838420'){
-        msg.react(msg.guild.emojis.get('725312935374749726'))
-        msg.react(msg.guild.emojis.get('723496367481290774'))
+        msg.react(msg.guild.emojis.cache.get('725312935374749726')).then(console.log).catch(console.error)
+        msg.react(msg.guild.emojis.cache.get('728225316862165064')).then(console.log).catch(console.error)
     }
 }
 function successend(msg){
