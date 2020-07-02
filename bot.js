@@ -23,6 +23,8 @@ client.on('ready', () =>{
             type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
         }
     });
+    const channel = <client>.channels.cache.get('666276936468922378');
+    channel.send('<@633283979109466122> 봇 업데이트 또는 실행이 완료되었습니다');
     console.log('봇이 준비되었습니다')
 });
 
