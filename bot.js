@@ -198,8 +198,8 @@ function check(msg){
         }
         
     }else if(msg.channel.id === '653905030964838420'){
-        msg.react(client.emojis.find(emoji => emoji.name === "thumbsup"))
-        msg.react(client.emojis.find(emoji => emoji.name === "thumbsdown"))
+        msg.react(client.emojis.get('725312935374749726'))
+        msg.react(client.emojis.get('723496367481290774'))
     }
 }
 function successend(msg){
