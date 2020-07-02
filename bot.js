@@ -198,8 +198,7 @@ function check(msg){
         }
         
     }else if(msg.channel.id === '653905030964838420'){
-       msg.react('👍');
-        msg.react('👎');
+       msg.react('👍').then(() => msg.react('👎'));
     }
 }
 function successend(msg){
