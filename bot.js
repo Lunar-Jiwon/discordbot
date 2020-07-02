@@ -197,6 +197,9 @@ function check(msg){
 
         }
         
+    }else if(msg.channel.id === '653905030964838420'){
+        msg.react(':thumbsup:')
+        msg.react(':thumbsdown: ')
     }
 }
 function successend(msg){
