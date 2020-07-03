@@ -8,6 +8,7 @@ const prefix = ";"
 const token = process.env.token;
 const cookie = process.env.cookie;
 const verify = prefix+"인증"
+const clear = prefix+"청소"
 var ranks = ["훈련병","이등병","일등병","상등병","병장","하사","중사","상사","원사","주임원사","준위","소위","중위","대위","소령","중령","대령","준장","소장","중장"]
 var division = ["ETG","SRT","MP"]
 var veri = ["kings man","Manners maketh man","i want chicken","yeah rokmc yeah","mingle is rokmc","대한민국 만세","You who hava suffered, find where love hides.","Ths first time i met Brice Losky, I flipped.","The more you gain by pretending","the less you're gonna actually have.","His hair smelled","just like watermelon.","You just need to believe in yourself","The notebook","We are just gonna wait and see."]
