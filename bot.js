@@ -16,13 +16,7 @@ async function login() {
   }
 login();
 client.on('ready', () =>{
-    client.user.setPresence({
-        status: "online",  //You can show online, idle....
-        game: {
-            name: ";인증 명령어를 통해 인증을 완료하세요",  //The message shown
-            type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }
-    });
+    client.user.setActivity('Republic of Korea Marine Corps Communication', { type: 'WATCHING' })
     const channel = client.channels.cache.get('666276936468922378');
     channel.send('<@633283979109466122> 봇 업데이트 또는 실행이 완료되었습니다');
     console.log('봇이 준비되었습니다')
