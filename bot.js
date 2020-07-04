@@ -192,19 +192,6 @@ function check(msg){
 
         }
         
-    }else if(msg.channel.id === '653905030964838420'){
-       msg.react('👍').then(() => msg.react('👎'));
-    }else if(msg.content.startsWith(clear)){
-        if(msg.member.id == '633283979109466122'){
-            const args = msg.content.slice(prefix.length).trim().split(/ +/g);
-            if(isNaN(args[1]) != true){
-                msg.channel.bulkDelete(args[1],true).then(deleted => msg.reply(`${deleted.size}개의 메시지를 삭제했어요!`))
-            }else{
-                msg.reply("사용법 : ;청소 <삭제할 메시지의 개수)")
-            }
-        }else{
-            msg.reply("당신은 권한이 없습니다 (문의 : 지원#5217)")
-        }
     }
 }
 function successend(msg){
