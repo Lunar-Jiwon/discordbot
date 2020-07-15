@@ -57,7 +57,7 @@ function check(msg){
                 range: 'Data!A1:B1000'
             }
 
-            let data = await gsapi.spreadsheets.values.get(opt);
+            let data = gsapi.spreadsheets.values.get(opt);
             let dataArray = data.data.values;
             for (i =1; i<dataArray.length;i++){
                 var data1 = dataArray[i];
@@ -464,7 +464,7 @@ function changenickname(id,member,rank, rankname,msg,bool){
             })
         })
     }else{
-        let data = await gsapi.spreadsheets.values.get(opt);
+        let data = gsapi.spreadsheets.values.get(opt);
         let dataArray = data.data.values;
         for (i =1; i<dataArray.length;i++){
             var data1 = dataArray[i];
