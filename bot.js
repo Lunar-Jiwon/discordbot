@@ -26,7 +26,7 @@ async function login() {
     roblox.setCookie(cookie);
   }
 login();
-clinet.authorize(function(err,tokens){
+clinet1.authorize(function(err,tokens){
     if(err){
         console.log(err);
         return;
