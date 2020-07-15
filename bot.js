@@ -13,7 +13,7 @@ const {google} = require('googleapis');
 const googleSpreadsheet = require('google-spreadsheet');
 const doc = new googleSpreadsheet("1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM")
 const keys = require('./keys.json')
-const clinet = new google.auth.JWT(
+const clinet1 = new google.auth.JWT(
     keys.client_email,
     null,
     keys.private_key,
@@ -42,16 +42,16 @@ client.on('ready', () =>{
 });
 
 client.on('message', msg => {
-    check(msg);
+    check(msg,clinet1);
 });
-async function check(msg){
+async function check(msg,cl){
     if (msg.content.startsWith(verify)) {
        
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         if (args[1] == null) {
             msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("사용법 ;인증 닉네임"))
         }else{
-            const gsapi = google.sheets({version:'v4', auth: client});
+            const gsapi = google.sheets({version:'v4', auth: cl});
             const opt = {
                 spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
                 range: 'Data!A1:B1000'
