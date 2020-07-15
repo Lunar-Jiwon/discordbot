@@ -9,6 +9,16 @@ const token = process.env.token;
 const cookie = process.env.cookie;
 const verify = prefix+"인증"
 const clear = prefix+"청소"
+const {google} = require('googleapis');
+const googleSpreadsheet = require('google-spreadsheet');
+const doc = new googleSpreadsheet("1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM")
+const keys = require('./keys.json')
+const clinet = new google.auth.JWT(
+    keys.client_email,
+    null,
+    keys.private_key,
+    ['https://www.googleapis.com/auth/spreadsheets']
+);
 var ranks = ["훈련병","이등병","일등병","상등병","병장","하사","중사","상사","원사","주임원사","준위","소위","중위","대위","소령","중령","대령","준장","소장","중장"]
 var division = ["ETG","SRT","MP"]
 var veri = ["kings man","Manners maketh man","i want chicken","yeah rokmc yeah","mingle is rokmc","대한민국 만세","You who hava suffered, find where love hides.","Ths first time i met Brice Losky, I flipped.","The more you gain by pretending","the less you're gonna actually have.","His hair smelled","just like watermelon.","You just need to believe in yourself","The notebook","We are just gonna wait and see."]
@@ -16,6 +26,14 @@ async function login() {
     roblox.setCookie(cookie);
   }
 login();
+clinet.authorize(function(err,tokens){
+    if(err){
+        console.log(err);
+        return;
+    }else{
+        console.log('Connected!')
+    }
+});
 client.on('ready', () =>{
     client.user.setActivity('Republic of Korea Marine Corps Communication', { type: 'WATCHING' })
     const channel = client.channels.cache.get('666276936468922378');
@@ -33,8 +51,82 @@ function check(msg){
         if (args[1] == null) {
             msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("사용법 ;인증 닉네임"))
         }else{
-            
-            var randomvalue = Math.floor(Math.random() * 14)+1;
+            const gsapi = google.sheets({version : V4, auth: client});
+            const opt = {
+                spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
+                range: 'Data!A1:B1000'
+            }
+
+            let data = await gsapi.spreadsheets.values.get(opt);
+            let dataArray = data.data.values;
+            for (i =1; i<dataArray.length;i++){
+                var data1 = dataArray[i];
+                if(data1[0] === msg.member.id){
+                    if(data[1] === args[1]){
+                        roblox.getRankInGroup(4889680,id).then(function(rank){
+                            if(rank == 1) {
+                                changenickname(id, msg.member,rank,ranks[0],msg,true);
+                            }else if(rank==2){
+                                changenickname(id, msg.member,rank,ranks[1],msg);
+                            }else if(rank==3){
+                                changenickname(id, msg.member,rank,ranks[2],msg);
+                            }
+                            else if(rank==4){
+                                changenickname(id, msg.member,rank,ranks[3],msg);
+                            }
+                            else if(rank==5){
+                                changenickname(id, msg.member,rank,ranks[4],msg);
+                            }
+                            else if(rank==10){
+                                changenickname(id, msg.member,rank,ranks[5],msg);
+                            }
+                            else if(rank==20){
+                                changenickname(id, msg.member,rank,ranks[6],msg);
+                            }
+                            else if(rank==40){
+                                changenickname(id, msg.member,rank,ranks[7]),msg;
+                            }
+                            else if(rank==50){
+                                changenickname(id, msg.member,rank,ranks[8],msg);
+                            }
+                            else if(rank==60){
+                                changenickname(id, msg.member,rank,ranks[9],msg);
+                            }
+                            else if(rank==100){
+                                changenickname(id, msg.member,rank,ranks[10],msg);
+                            }
+                            else if(rank==125){
+                                changenickname(id, msg.member,rank,ranks[11],msg);
+                            }
+                            else if(rank==130){
+                                changenickname(id, msg.member,rank,ranks[12],msg);
+                            }
+                            else if(rank==150){
+                                changenickname(id, msg.member,rank,ranks[13],msg);
+                            }
+                            else if(rank==160){
+                                changenickname(id, msg.member,rank,ranks[14],msg);
+                            }
+                            else if(rank==175){
+                                changenickname(id, msg.member,rank,ranks[15],msg);
+                            }
+                            else if(rank==200){
+                                changenickname(id, msg.member,rank,ranks[16],msg);
+                            }else if(rank==220){
+                                changenickname(id, msg.member,rank,ranks[17],msg);
+                            }
+                            else if(rank==230){
+                                changenickname(id, msg.member,rank,ranks[18],msg);
+                            }else if(rank ==240){
+                                changenickname(id, msg.member,rank,ranks[19],msg);
+                            }else if(rank == 0){
+                                msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("본 플레이어는 해병대 그룹에 가입되어있지 않습니다."))
+                            }
+                        })
+                        break
+                    }
+                }else{
+                    var randomvalue = Math.floor(Math.random() * 14)+1;
             msg.reply(new Discord.MessageEmbed().setColor("#00ffe0").setTitle("인증").setDescription("자신의 계정 설명에 ```"+veri[randomvalue]+"``` 글을 넣고 저장하면 완료라고 보내주세요."));
             const filter = m => m.author.id === msg.author.id;
             msg.channel.awaitMessages(filter,{
@@ -51,60 +143,60 @@ function check(msg){
                             if (blurb == veri[randomvalue]){
                                 roblox.getRankInGroup(4889680,id).then(function(rank){
                                     if(rank == 1) {
-                                        changenickname(id, msg.member,rank,ranks[0],msg);
+                                        changenickname(id, msg.member,rank,ranks[0],msg,false);
                                     }else if(rank==2){
-                                        changenickname(id, msg.member,rank,ranks[1],msg);
+                                        changenickname(id, msg.member,rank,ranks[1],msg,false);
                                     }else if(rank==3){
-                                        changenickname(id, msg.member,rank,ranks[2],msg);
+                                        changenickname(id, msg.member,rank,ranks[2],msg,false);
                                     }
                                     else if(rank==4){
-                                        changenickname(id, msg.member,rank,ranks[3],msg);
+                                        changenickname(id, msg.member,rank,ranks[3],msg,false);
                                     }
                                     else if(rank==5){
-                                        changenickname(id, msg.member,rank,ranks[4],msg);
+                                        changenickname(id, msg.member,rank,ranks[4],msg,false);
                                     }
                                     else if(rank==10){
-                                        changenickname(id, msg.member,rank,ranks[5],msg);
+                                        changenickname(id, msg.member,rank,ranks[5],msg,false);
                                     }
                                     else if(rank==20){
-                                        changenickname(id, msg.member,rank,ranks[6],msg);
+                                        changenickname(id, msg.member,rank,ranks[6],msg,false);
                                     }
                                     else if(rank==40){
-                                        changenickname(id, msg.member,rank,ranks[7]),msg;
+                                        changenickname(id, msg.member,rank,ranks[7],msg,false);
                                     }
                                     else if(rank==50){
-                                        changenickname(id, msg.member,rank,ranks[8],msg);
+                                        changenickname(id, msg.member,rank,ranks[8],msg,false);
                                     }
                                     else if(rank==60){
-                                        changenickname(id, msg.member,rank,ranks[9],msg);
+                                        changenickname(id, msg.member,rank,ranks[9],msg,false);
                                     }
                                     else if(rank==100){
-                                        changenickname(id, msg.member,rank,ranks[10],msg);
+                                        changenickname(id, msg.member,rank,ranks[10],msg,false);
                                     }
                                     else if(rank==125){
-                                        changenickname(id, msg.member,rank,ranks[11],msg);
+                                        changenickname(id, msg.member,rank,ranks[11],msg,false);
                                     }
                                     else if(rank==130){
-                                        changenickname(id, msg.member,rank,ranks[12],msg);
+                                        changenickname(id, msg.member,rank,ranks[12],msg,false);
                                     }
                                     else if(rank==150){
-                                        changenickname(id, msg.member,rank,ranks[13],msg);
+                                        changenickname(id, msg.member,rank,ranks[13],msg,false);
                                     }
                                     else if(rank==160){
-                                        changenickname(id, msg.member,rank,ranks[14],msg);
+                                        changenickname(id, msg.member,rank,ranks[14],msg,false);
                                     }
                                     else if(rank==175){
-                                        changenickname(id, msg.member,rank,ranks[15],msg);
+                                        changenickname(id, msg.member,rank,ranks[15],msg,false);
                                     }
                                     else if(rank==200){
-                                        changenickname(id, msg.member,rank,ranks[16],msg);
+                                        changenickname(id, msg.member,rank,ranks[16],msg,false);
                                     }else if(rank==220){
-                                        changenickname(id, msg.member,rank,ranks[17],msg);
+                                        changenickname(id, msg.member,rank,ranks[17],msg,false);
                                     }
                                     else if(rank==230){
-                                        changenickname(id, msg.member,rank,ranks[18],msg);
+                                        changenickname(id, msg.member,rank,ranks[18],msg,false);
                                     }else if(rank ==240){
-                                        changenickname(id, msg.member,rank,ranks[19],msg);
+                                        changenickname(id, msg.member,rank,ranks[19],msg,false);
                                     }else if(rank == 0){
                                         msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("본 플레이어는 해병대 그룹에 가입되어있지 않습니다."))
                                     }
@@ -115,60 +207,60 @@ function check(msg){
                                         roblox.getRankInGroup(4889680,id).then(function(rank){
                                             if(rank != 0){
                                                 if(rank == 1) {
-                                                    changenickname(id, msg.member,rank,ranks[0],msg);
+                                                    changenickname(id, msg.member,rank,ranks[0],msg,false);
                                                 }else if(rank==2){
-                                                    changenickname(id, msg.member,rank,ranks[1],msg);
+                                                    changenickname(id, msg.member,rank,ranks[1],msg,false);
                                                 }else if(rank==3){
-                                                    changenickname(id, msg.member,rank,ranks[2],msg);
+                                                    changenickname(id, msg.member,rank,ranks[2],msg,false);
                                                 }
                                                 else if(rank==4){
-                                                    changenickname(id, msg.member,rank,ranks[3],msg);
+                                                    changenickname(id, msg.member,rank,ranks[3],msg,false);
                                                 }
                                                 else if(rank==5){
-                                                    changenickname(id, msg.member,rank,ranks[4],msg);
+                                                    changenickname(id, msg.member,rank,ranks[4],msg,false);
                                                 }
                                                 else if(rank==10){
-                                                    changenickname(id, msg.member,rank,ranks[5],msg);
+                                                    changenickname(id, msg.member,rank,ranks[5],msg,false);
                                                 }
                                                 else if(rank==20){
-                                                    changenickname(id, msg.member,rank,ranks[6],msg);
+                                                    changenickname(id, msg.member,rank,ranks[6],msg,false);
                                                 }
                                                 else if(rank==40){
-                                                    changenickname(id, msg.member,rank,ranks[7]),msg;
+                                                    changenickname(id, msg.member,rank,ranks[7],msg,false);
                                                 }
                                                 else if(rank==50){
-                                                    changenickname(id, msg.member,rank,ranks[8],msg);
+                                                    changenickname(id, msg.member,rank,ranks[8],msg,false);
                                                 }
                                                 else if(rank==60){
-                                                    changenickname(id, msg.member,rank,ranks[9],msg);
+                                                    changenickname(id, msg.member,rank,ranks[9],msg,false);
                                                 }
                                                 else if(rank==100){
-                                                    changenickname(id, msg.member,rank,ranks[10],msg);
+                                                    changenickname(id, msg.member,rank,ranks[10],msg,false);
                                                 }
                                                 else if(rank==125){
-                                                    changenickname(id, msg.member,rank,ranks[11],msg);
+                                                    changenickname(id, msg.member,rank,ranks[11],msg,false);
                                                 }
                                                 else if(rank==130){
-                                                    changenickname(id, msg.member,rank,ranks[12],msg);
+                                                    changenickname(id, msg.member,rank,ranks[12],msg,false);
                                                 }
                                                 else if(rank==150){
-                                                    changenickname(id, msg.member,rank,ranks[13],msg);
+                                                    changenickname(id, msg.member,rank,ranks[13],msg,false);
                                                 }
                                                 else if(rank==160){
-                                                    changenickname(id, msg.member,rank,ranks[14],msg);
+                                                    changenickname(id, msg.member,rank,ranks[14],msg,false);
                                                 }
                                                 else if(rank==175){
-                                                    changenickname(id, msg.member,rank,ranks[15],msg);
+                                                    changenickname(id, msg.member,rank,ranks[15],msg,false);
                                                 }
                                                 else if(rank==200){
-                                                    changenickname(id, msg.member,rank,ranks[16],msg);
+                                                    changenickname(id, msg.member,rank,ranks[16],msg,false);
                                                 }else if(rank==220){
-                                                    changenickname(id, msg.member,rank,ranks[17],msg);
+                                                    changenickname(id, msg.member,rank,ranks[17],msg,false);
                                                 }
                                                 else if(rank==230){
-                                                    changenickname(id, msg.member,rank,ranks[18],msg);
+                                                    changenickname(id, msg.member,rank,ranks[18],msg,false);
                                                 }else if(rank ==240){
-                                                    changenickname(id, msg.member,rank,ranks[19],msg);
+                                                    changenickname(id, msg.member,rank,ranks[19],msg,false);
                                                 }else if(rank == 0){
                                                     msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("본 플레이어는 해병대 그룹에 가입되어있지 않습니다."))
                                                 }
@@ -189,12 +281,16 @@ function check(msg){
             }).catch(() => {
                 return msg.reply("3분동안 응답이 없어 취소되었습니다.");
             });
+                }
+            }
+            
 
         }
         
     }
 }
 function successend(msg){
+
     msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
 }
 function giverole(msg,rank){
@@ -317,9 +413,11 @@ function removeallrole(msg){
     }
 }
 
-function changenickname(id,member,rank, rankname,msg){
-    if (rank > 0){
+function changenickname(id,member,rank, rankname,msg,bool){
+    
+    if(bool == true){
         roblox.getUsernameFromId(id).then(function(name){
+            
             roblox.getRankInGroup(5882833,id).then(function(srt){
                 if(srt != 0){
                     msg.member.roles.add('599742981519704097')
@@ -365,6 +463,143 @@ function changenickname(id,member,rank, rankname,msg){
                 }
             })
         })
+    }else{
+        let data = await gsapi.spreadsheets.values.get(opt);
+        let dataArray = data.data.values;
+        for (i =1; i<dataArray.length;i++){
+            var data1 = dataArray[i];
+            if(data1[0] === msg.member.id){
+                roblox.getUsernameFromId(id).then(function(name){
+                    if(data[1] === name){
+                        doc.getCells(
+                            1,
+                            {
+                                "max-row" : 1
+                                ,"max-col" : 1000
+                                ,"return-empty" : true
+                            },function(err,cells){
+                                cells[i].value = msg.member.id;
+                                cells[i].save();
+                            }
+                        )
+                        doc.getCells(
+                            1,
+                            {
+                                "max-row" : 2
+                                ,"max-col" : 1000
+                                ,"return-empty" : true
+                            },function(err,cells){
+                                cells[++i].value = name
+                                cells[++i].save();
+                            }
+                        )
+                        roblox.getRankInGroup(5882833,id).then(function(srt){
+                            if(srt != 0){
+                                msg.member.roles.add('599742981519704097')
+                                msg.member.roles.add('712235494704152587')
+                                msg.member.roles.remove('701366424123473921')
+                                msg.member.roles.remove('717715673924763728')
+                                giverole(msg,rank)
+                                member.setNickname("["+rankname+"] (SRT) "+name);
+                                
+                            }else{
+                                roblox.getRankInGroup(5426538,id).then(function(mp){
+                                    if(mp != 0){
+                                        giverole(msg,rank)
+                                        msg.member.roles.add('599742981519704097')
+                                        msg.member.roles.add('701366424123473921')
+                                        msg.member.roles.remove('717715673924763728')
+                                        msg.member.roles.remove('712235494704152587') 
+                                        member.setNickname("["+rankname+"] (MP) "+name);
+                                        
+                                    }else{
+                                        roblox.getRankInGroup(5419545,id).then(function(etg){
+                                            if(etg != 0){
+                                                giverole(msg,rank)
+                                                msg.member.roles.add('599742981519704097')
+                                                msg.member.roles.add('717715673924763728')
+                                                msg.member.roles.remove('712235494704152587')
+                                                msg.member.roles.remove('701366424123473921')
+                                                member.setNickname("["+rankname+"] (ETG) "+name);
+                                                
+                                            }else{
+                                                giverole(msg,rank)
+                                                msg.member.roles.add('599742981519704097')
+                                                msg.member.roles.remove('599743152068493332') 
+                                                msg.member.roles.remove('712235494704152587')
+                                                msg.member.roles.remove('701366424123473921')
+                                                msg.member.roles.remove('717715673924763728')
+                                                member.setNickname("["+rankname+"] "+name);
+                                                
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+                
+            }else{
+                roblox.getUsernameFromId(id).then(function(name){
+                    doc.useServiceAccountAuth(keys,function(err){
+                        let rowData = {disc_id: msg.member.id,rbxname:name}
+                        doc.addRow(
+                            1,
+                            rowData,
+                            function(err){
+                                msg.reply("코드 426번 줄에서 오류가 발생했습니다 지원이라는 개발자에게 DM으로 연락을 해주세요")
+                            }
+                        )
+                    })
+                    roblox.getRankInGroup(5882833,id).then(function(srt){
+                        if(srt != 0){
+                            msg.member.roles.add('599742981519704097')
+                            msg.member.roles.add('712235494704152587')
+                            msg.member.roles.remove('701366424123473921')
+                            msg.member.roles.remove('717715673924763728')
+                            giverole(msg,rank)
+                            member.setNickname("["+rankname+"] (SRT) "+name);
+                            
+                        }else{
+                            roblox.getRankInGroup(5426538,id).then(function(mp){
+                                if(mp != 0){
+                                    giverole(msg,rank)
+                                    msg.member.roles.add('599742981519704097')
+                                    msg.member.roles.add('701366424123473921')
+                                    msg.member.roles.remove('717715673924763728')
+                                    msg.member.roles.remove('712235494704152587') 
+                                    member.setNickname("["+rankname+"] (MP) "+name);
+                                    
+                                }else{
+                                    roblox.getRankInGroup(5419545,id).then(function(etg){
+                                        if(etg != 0){
+                                            giverole(msg,rank)
+                                            msg.member.roles.add('599742981519704097')
+                                            msg.member.roles.add('717715673924763728')
+                                            msg.member.roles.remove('712235494704152587')
+                                            msg.member.roles.remove('701366424123473921')
+                                            member.setNickname("["+rankname+"] (ETG) "+name);
+                                            
+                                        }else{
+                                            giverole(msg,rank)
+                                            msg.member.roles.add('599742981519704097')
+                                            msg.member.roles.remove('599743152068493332') 
+                                            msg.member.roles.remove('712235494704152587')
+                                            msg.member.roles.remove('701366424123473921')
+                                            msg.member.roles.remove('717715673924763728')
+                                            member.setNickname("["+rankname+"] "+name);
+                                            
+                                        }
+                                    })
+                                }
+                            })
+                        }
+                    })
+                })
+            }
+        }
     }
+    
 }
 client.login(token)
