@@ -44,7 +44,7 @@ client.on('ready', () =>{
 client.on('message', msg => {
     check(msg);
 });
-function check(msg){
+async function check(msg){
     if (msg.content.startsWith(verify)) {
        
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
@@ -57,8 +57,8 @@ function check(msg){
                 range: 'Data!A1:B1000'
             }
 
-            let data = gsapi.spreadsheets.values.get(opt);
-            let dataArray = data.data.value;
+            let data = await gsapi.spreadsheets.values.get(opt);
+            let dataArray = data.data.values;
             for (i =1; i<dataArray.length;i++){
                 var data1 = dataArray[i];
                 if(data1[0] === msg.member.id){
@@ -413,7 +413,7 @@ function removeallrole(msg){
     }
 }
 
-function changenickname(id,member,rank, rankname,msg,bool){
+async function changenickname(id,member,rank, rankname,msg,bool){
     const opt = {
                 spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
                 range: 'Data!A1:B1000'
@@ -467,8 +467,8 @@ function changenickname(id,member,rank, rankname,msg,bool){
             })
         })
     }else{
-        let data = gsapi.spreadsheets.values.get(opt);
-        dataArray = data.data.values;
+        let data = await gsapi.spreadsheets.values.get(opt);
+        let dataArray = data.data.values;
         for (i =1; i<dataArray.length;i++){
             var data1 = dataArray[i];
             if(data1[0] === msg.member.id){
