@@ -51,6 +51,7 @@ async function check(msg,cl){
         if (args[1] == null) {
             msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("사용법 ;인증 닉네임"))
         }else{
+            console.log("chekc")
             const gsapi = google.sheets({version:'v4', auth: cl});
             const opt = {
                 spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
