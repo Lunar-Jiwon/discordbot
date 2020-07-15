@@ -58,7 +58,7 @@ function check(msg){
             }
 
             let data = gsapi.spreadsheets.values.get(opt);
-            let dataArray = data.data.values;
+            let dataArray = data.data.value;
             for (i =1; i<dataArray.length;i++){
                 var data1 = dataArray[i];
                 if(data1[0] === msg.member.id){
