@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "roblox-nickname",
+  "private_key_id": "790d5eb718c9bd122852df424d38d6cc2fddf525",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCqhca5TnB0dqrL\nI7AfbEwAeAkS6iiubxrLFWUK8V6WeZpuG3VzN9yTp6zRGLkj8LnQ2ldmk6oBkG7f\nDxw5+RAgXiC/p4S9Go9jBiIu81F4CBNjXaWDaGxcVUItoxi21vP094sr5cSCts9a\nk1pmsU1w3cKomWF3YtsDaWaTwz8ptq6zYKlCSiBkeeJoJhkmXLWdJrvAdgHvVT8Z\niIa0z1JAOPOQB4MIPePlsVGNKFd+Vtq6fCGCobjVt72v854LQwJdB+WQbecS2Mdk\nzljnS0AwR8drvETAoCoAeqxIWPUMvk7TJKPnJAHtlrUteDgIaqJco8NifPkcezgB\nzaOqXk6xAgMBAAECgf9su620UsC+jQEoIOt/RvWBf/7YlegnuNn2fHCLYM5qlcPE\nr5S6FrGQQm9/iURHnGFvjkVgN746S1nX7I08GFeCDsDTIuoa8t72eOiGY9QURTr4\n+IqwkkGlQqPb0hnRhyrpoxhYsklKLzM8b5rE1od2cNMBKf/n7X1oU1yksy1L26D2\nSCKFpk6jfuithgdpx+0rLzNsUpwGgWNHmgOMYNMEnCIu8DHmni58QbjVerHPKIiP\ny1iT60AQevaSl2VD+/Y0WULuLvri2WyiQrnDtUVRjWG3oI8Ag26vDabaKB+YWIi+\nNWdZiJKZDigF/MeWsr2OQEmeZasKgijFtqdy+9UCgYEA4Gznb8lB1U5s9hlxgqP/\n9PLVIyu+Ocy63BC0oBRASUxZdbaJO1KSSWoZqMp4WP9aw9KQyzgPiNSk/CFO/CC9\nK6Idw2fzB1Xss9wPnnKY5FPBdaGIFsFbgSUCCDL+Q163vqxwZT6tiYFMm8OJv01I\nTJ7IyMnvfVvE01+I/jTNZEsCgYEAwoN2L959nV/g+BRQ3k74musR+Rw1YNaFGcod\nVg0H5TPdz6jj/8KSkgpeL+0nSvND8TSQFakg2oecp9FVVEr4VyfUExq8AJ/lINPz\nO+P9M+xsAQKlienDsjVaobjwqAg/ccaxIQ1eMLSCoLlPYl+9g5NGbgjU2+uX9/wb\nxJGsI3MCgYEAnlIVftXSvIDj+0T9v7SkR4/bbkFYo/vawo6Cbf97TnovDgykiRX6\nHxJbYajb96TEyipMfSBiTRv9++QfjVwnN5XZO1Wkq8MhBc0zs4qSc1jmvG4kzDDB\ntbx+z3vxxWMXasrJS5NI5x0xBx2NmkgRvgOyD3vtmFjZ5GecBAEJ+DsCgYA4DztY\nwH7jhGaKGRDVgV0VCPq9GOwpZKonrKCX1FmaLUCYQMy1QZaMkIBkv6y7ZTEHq2Z7\nV6soUD1OAH7fNFwugkQU3XehlnOq6msHr8Wh2VmnUOP0w3KrQcVFJs/1HatrVyBl\nrjyfPOcI+19tsroj2aZKwDDY0SWTSw2VsYYzEQKBgQC9RXVQ5vm559cslTo+hRcb\n8WzIBB49g3Kc8gyA9BAXniiijGSvCOApi02zHYHmaKL3/lrpL4h0b5dFn3bfxiuw\n6+Qls5s7iu2RMZy+J3xY+AIUtIjWKF6ZSpVpJZGbLk3j1h3rxHxhqIYfkCOUQjJ4\n6KY7hCz7nE3ru8HeQow9bg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "serviceroblox@roblox-nickname.iam.gserviceaccount.com",
+  "client_id": "108158778395721820601",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/serviceroblox%40roblox-nickname.iam.gserviceaccount.com"
+}
