@@ -414,7 +414,10 @@ function removeallrole(msg){
 }
 
 function changenickname(id,member,rank, rankname,msg,bool){
-    
+    const opt = {
+                spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
+                range: 'Data!A1:B1000'
+            }
     if(bool == true){
         roblox.getUsernameFromId(id).then(function(name){
             
