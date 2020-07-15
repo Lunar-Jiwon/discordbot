@@ -468,7 +468,7 @@ function changenickname(id,member,rank, rankname,msg,bool){
         })
     }else{
         let data = gsapi.spreadsheets.values.get(opt);
-        let dataArray = data.data.values;
+        dataArray = data.data.values;
         for (i =1; i<dataArray.length;i++){
             var data1 = dataArray[i];
             if(data1[0] === msg.member.id){
