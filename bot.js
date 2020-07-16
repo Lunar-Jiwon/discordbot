@@ -60,7 +60,9 @@ async function check(msg,cl){
 
             let data = await gsapi.spreadsheets.values.get(opt);
             let dataArray = data.data.values;
+            console.log("chekc")
             for (i =1; i<dataArray.length;i++){
+                console.log("chekc")
                 var data1 = dataArray[i];
                 if(data1[0] == msg.member.id){
                     if(data1[1] == args[1]){
@@ -415,11 +417,13 @@ function removeallrole(msg){
 }
 
 async function changenickname(id,member,rank, rankname,msg,bool){
+    console.log("chekc")
     const opt = {
                 spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
                 range: 'Data!A1:B1000'
             }
     if(bool == true){
+        
         roblox.getUsernameFromId(id).then(function(name){
             
             roblox.getRankInGroup(5882833,id).then(function(srt){
@@ -468,6 +472,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
             })
         })
     }else{
+        console.log("chek1c")
         let data = await gsapi.spreadsheets.values.get(opt);
         let dataArray = data.data.values;
         for (i =1; i<dataArray.length;i++){
