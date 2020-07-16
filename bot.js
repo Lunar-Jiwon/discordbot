@@ -61,7 +61,7 @@ async function check(msg,cl){
                 var data1 = dataArray[i];
                 console.log(dataArray[i])
                 if(data1[0] == msg.member.id){
-                    if(data1[1] == args[1]){
+                    if(data1[1] != null){
                         roblox.getIdFromUsername(args[1]).then(function (id){
                             roblox.getRankInGroup(4889680,id).then(function(rank){
                                 if(rank == 1) {
