@@ -61,7 +61,7 @@ async function check(msg,cl){
             let data = await gsapi.spreadsheets.values.get(opt);
             let dataArray = data.data.values;
             console.log("chekc")
-            for (var i =1; i<dataArray.length;i++){
+            for (var i =1 in dataArray){
                 console.log("chekc")
                 var data1 = dataArray[i];
                 if(data1[0] == msg.member.id){
