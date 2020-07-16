@@ -55,7 +55,7 @@ async function check(msg,cl){
         if (args[1] == null) {
             let data = await gsapi.spreadsheets.values.get(opt);
                 let dataArray = data.data.values;
-           for(var i =1; i<dataArry.length;i++){
+            for (var i =1 in dataArray){
                 console.log("chekc")
                 
                 var data1 = dataArray[i];
@@ -298,7 +298,9 @@ async function check(msg,cl){
             });
                 }
             }
-             
+            
+
+}
 function successend(msg){
 
     msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
@@ -483,7 +485,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
         
         let data = await gsapi.spreadsheets.values.get(opt);
         let dataArray = data.data.values;
-        for (var i =0 in dataArray){
+        for (var i =1 in dataArray){
             var data1 = dataArray[i];
             if(data1[0] === msg.member.id){
                 roblox.getUsernameFromId(id).then(function(name){
@@ -618,6 +620,5 @@ async function changenickname(id,member,rank, rankname,msg,bool){
         }
     }
     
-}
 }
 client.login(token)
