@@ -566,7 +566,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
                             1,
                             rowData,
                             function(err){
-                                msg.reply("코드 426번 줄에서 오류가 발생했습니다 지원이라는 개발자에게 DM으로 연락을 해주세요")
+                                
                             }
                         )
                     })
