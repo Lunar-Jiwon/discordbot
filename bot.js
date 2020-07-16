@@ -126,11 +126,7 @@ async function check(msg,cl){
                         })
                         break
                     }
-                }else{
-                    msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("사용법 ;인증 닉네임"))
-                    break
                 }
-                break
             }
         }else{
             const args = msg.content.slice(prefix.length).trim().split(/ +/g);
