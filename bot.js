@@ -55,7 +55,7 @@ async function check(msg,cl){
         if (args[1] == null) {
             let data = await gsapi.spreadsheets.values.get(opt);
                 let dataArray = data.data.values;
-            for (var i =1 in dataArray){
+            for (var i =1; i<dataArry.length;i++){
                 console.log("chesdfsdfkc")
                 
                 var data1 = dataArray[i];
