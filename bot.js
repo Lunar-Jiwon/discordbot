@@ -56,7 +56,7 @@ async function check(msg,cl){
             let data = await gsapi.spreadsheets.values.get(opt);
                 let dataArray = data.data.values;
             for (var i =1 in dataArray){
-                console.log("chekc")
+                console.log("chesdfsdfkc")
                 
                 var data1 = dataArray[i];
                 console.log(data1[i])
@@ -132,9 +132,10 @@ async function check(msg,cl){
                 }
                 break
             }
+            break
         }else{
             const args = msg.content.slice(prefix.length).trim().split(/ +/g);
-            console.log("chekc")
+            console.log("chek1c")
             const gsapi = google.sheets({version:'v4', auth: cl});
             const opt = {
                 spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
@@ -142,7 +143,7 @@ async function check(msg,cl){
             }
 
             
-            console.log("chekc")
+            console.log("ch2ekc")
             
                     var randomvalue = Math.floor(Math.random() * 14)+1;
             msg.reply(new Discord.MessageEmbed().setColor("#00ffe0").setTitle("인증").setDescription("자신의 계정 설명에 ```"+veri[randomvalue]+"``` 글을 넣고 저장하면 완료라고 보내주세요."));
