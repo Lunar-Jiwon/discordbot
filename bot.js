@@ -476,7 +476,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
         
         let data = await gsapi.spreadsheets.values.get(opt);
         let dataArray = data.data.values;
-        for (i =1 in dataArray){
+        for (var i =1 in dataArray){
             var data1 = dataArray[i];
             if(data1[0] === msg.member.id){
                 roblox.getUsernameFromId(id).then(function(name){
