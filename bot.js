@@ -59,6 +59,7 @@ async function check(msg,cl){
                 console.log("chekc")
                 
                 var data1 = dataArray[i];
+                console.log(data1[i])
                 if(data1[0] == msg.member.id){
                     if(data1[1] == args[1]){
                         roblox.getIdFromUsername(args[1]).then(function (id){
