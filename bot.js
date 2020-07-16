@@ -55,7 +55,7 @@ async function check(msg,cl){
         if (args[1] == null) {
             let data = await gsapi.spreadsheets.values.get(opt);
                 let dataArray = data.data.values;
-           for(var i =1; i<dataArry.length;i++)
+           for(var i =1; i<dataArry.length;i++){
                 console.log("chekc")
                 
                 var data1 = dataArray[i];
@@ -130,6 +130,7 @@ async function check(msg,cl){
                     msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("사용법 ;인증 닉네임"))
                 }
             }
+        }
         }else{
             console.log("chekc")
             const gsapi = google.sheets({version:'v4', auth: cl});
