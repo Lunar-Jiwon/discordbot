@@ -51,6 +51,8 @@ async function check(msg,cl){
         if (args[1] == null) {
             for (var i =1 in dataArray){
                 console.log("chekc")
+                let data = await gsapi.spreadsheets.values.get(opt);
+                let dataArray = data.data.values;
                 var data1 = dataArray[i];
                 if(data1[0] == msg.member.id){
                     if(data1[1] == args[1]){
@@ -130,8 +132,7 @@ async function check(msg,cl){
                 range: 'Data!A1:B1000'
             }
 
-            let data = await gsapi.spreadsheets.values.get(opt);
-            let dataArray = data.data.values;
+            
             console.log("chekc")
             
                     var randomvalue = Math.floor(Math.random() * 14)+1;
