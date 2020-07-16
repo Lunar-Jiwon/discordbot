@@ -298,9 +298,7 @@ async function check(msg,cl){
             });
                 }
             }
-            
-
-}
+             
 function successend(msg){
 
     msg.reply(new Discord.MessageEmbed().setColor("#00ff33").setTitle("성공").setDescription("인증이 완료되었습니다. (역할 지급이 느릴 수 있습니다)"))
