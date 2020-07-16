@@ -46,7 +46,11 @@ client.on('message', msg => {
 });
 async function check(msg,cl){
     if (msg.content.startsWith(verify)) {
-       
+        const gsapi = google.sheets({version:'v4', auth: cl});
+        const opt = {
+            spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
+            range: 'Data!A1:B1000'
+        }
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         if (args[1] == null) {
             let data = await gsapi.spreadsheets.values.get(opt);
