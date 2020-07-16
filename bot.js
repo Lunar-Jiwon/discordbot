@@ -488,7 +488,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
         
         let data = await gsapi.spreadsheets.values.get(opt);
         let dataArray = data.data.values;
-        for (var i =1 in dataArray){
+        for (i =1; i<dataArray.length;i++){
             var data1 = dataArray[i];
             if(data1[0] === msg.member.id){
                 roblox.getUsernameFromId(id).then(function(name){
@@ -561,7 +561,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
                         })
                     }
                 })
-                
+                break;
             }else{
                 roblox.getUsernameFromId(id).then(function(name){
                     doc.useServiceAccountAuth(keys,function(err){
@@ -619,6 +619,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
                         }
                     })
                 })
+                break;
             }
         }
     }
