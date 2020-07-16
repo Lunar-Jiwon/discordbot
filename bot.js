@@ -132,7 +132,6 @@ async function check(msg,cl){
                 }
                 break
             }
-            break
         }else{
             const args = msg.content.slice(prefix.length).trim().split(/ +/g);
             console.log("chek1c")
