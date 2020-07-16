@@ -128,9 +128,12 @@ async function check(msg,cl){
                     }
                 }else{
                     msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("사용법 ;인증 닉네임"))
+                    break
                 }
+                break
             }
         }else{
+            const args = msg.content.slice(prefix.length).trim().split(/ +/g);
             console.log("chekc")
             const gsapi = google.sheets({version:'v4', auth: cl});
             const opt = {
@@ -296,8 +299,8 @@ async function check(msg,cl){
             }).catch(() => {
                 return msg.reply("3분동안 응답이 없어 취소되었습니다.");
             });
-                }
-            }
+        }
+    }
             
 
 }
