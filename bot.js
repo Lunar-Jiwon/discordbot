@@ -130,7 +130,6 @@ async function check(msg,cl){
                     msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("사용법 ;인증 닉네임"))
                 }
             }
-        }
         }else{
             console.log("chekc")
             const gsapi = google.sheets({version:'v4', auth: cl});
@@ -619,5 +618,6 @@ async function changenickname(id,member,rank, rankname,msg,bool){
         }
     }
     
+}
 }
 client.login(token)
