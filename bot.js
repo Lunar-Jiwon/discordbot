@@ -472,6 +472,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
             })
         })
     }else{
+        const gsapi = google.sheets({version:'v4', auth: cl});
         console.log("chek1c")
         let data = await gsapi.spreadsheets.values.get(opt);
         let dataArray = data.data.values;
