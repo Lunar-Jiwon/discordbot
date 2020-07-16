@@ -417,6 +417,7 @@ function removeallrole(msg){
 }
 
 async function changenickname(id,member,rank, rankname,msg,bool){
+    const gsapi = google.sheets({version:'v4', auth: cl});
     console.log("chekc")
     const opt = {
                 spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
@@ -472,8 +473,7 @@ async function changenickname(id,member,rank, rankname,msg,bool){
             })
         })
     }else{
-        const gsapi = google.sheets({version:'v4', auth: cl});
-        console.log("chek1c")
+        
         let data = await gsapi.spreadsheets.values.get(opt);
         let dataArray = data.data.values;
         for (i =1; i<dataArray.length;i++){
