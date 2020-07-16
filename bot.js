@@ -417,7 +417,7 @@ function removeallrole(msg){
 }
 
 async function changenickname(id,member,rank, rankname,msg,bool){
-    const gsapi = google.sheets({version:'v4', auth: client1});
+    const gsapi = google.sheets({version:'v4', auth: clinet1 });
     console.log("chekc")
     const opt = {
                 spreadsheetId : "1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM",
