@@ -66,6 +66,7 @@ async function check(msg,cl){
                 var data1 = dataArray[i];
                 if(data1[0] == msg.member.id){
                     if(data1[1] == args[1]){
+                roblox.getIdFromUsername(args[1]).then(function (id){
                         roblox.getRankInGroup(4889680,id).then(function(rank){
                             if(rank == 1) {
                                 changenickname(id, msg.member,rank,ranks[0],msg,true);
@@ -126,6 +127,7 @@ async function check(msg,cl){
                                 msg.reply(new Discord.MessageEmbed().setColor("#ff0000").setTitle("오류").setDescription("본 플레이어는 해병대 그룹에 가입되어있지 않습니다."))
                             }
                         })
+    })
                         break
                     }
                 }else{
