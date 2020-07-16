@@ -63,7 +63,7 @@ async function check(msg,cl){
             for (i =1; i<dataArray.length;i++){
                 var data1 = dataArray[i];
                 if(data1[0] == msg.member.id){
-                    if(data[1] == args[1]){
+                    if(data1[1] == args[1]){
                         roblox.getRankInGroup(4889680,id).then(function(rank){
                             if(rank == 1) {
                                 changenickname(id, msg.member,rank,ranks[0],msg,true);
