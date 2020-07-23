@@ -13,6 +13,12 @@ const {google} = require('googleapis');
 const googleSpreadsheet = require('google-spreadsheet');
 const doc = new googleSpreadsheet("1rTScm6d4Ouzv96Blkq78uIjf_X_bvx0Zr9gRKicjAxM")
 const keys = require('./keys.json')
+var reqTimer = setTimeout(function wakeUp() {
+   request("https://nameless-gorge-19527.herokuapp.com", function() {
+      console.log("WAKE UP DYNO");
+   });
+   return reqTimer = setTimeout(wakeUp, 1200000);
+}, 1200000);
 const clinet1 = new google.auth.JWT(
     keys.client_email,
     null,
